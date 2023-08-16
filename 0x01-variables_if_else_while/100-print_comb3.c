@@ -1,60 +1,35 @@
-
-!#bin/bash
 #include <stdio.h>
-
-
 /**
-
- * main - prints all possible different combinations of two digits
-
- * Return: ALways 0 (Success)
-
+ * main -prints all possible different combinations of two digits
+ *
+ * Return: Always 0 (success)
+ *
  */
 
 int main(void)
 
 {
+	int ones = '0';
+	int tens = '0';
 
-        int n, m;
+	for (tens = '0'; tens <= '9'; tens++)/* prints tens digit*/
+	{
+		for (ones = '0'; ones <= '9'; ones++)/* prints ones digit*/
+		{
+			if (!((ones == tens) || (tens > ones)))/* eliminates repitition*/
+			{
+				putchar(tens);
+				putchar(ones);
+				if (!(ones == '9' && tens == '8'))/* adds comma and space*/
+				{
+					putchar(',');
+					putchar(' ');
+				}
+			}
+		}
+	}
 
+	putchar('\n');
 
-        for (n = 48; n <= 56; n++)
-
-        {
-
-                for (m = 49; m <= 57; m++)
-
-                {
-
-                        if (m > n)
-
-                        {
-
-                                putchar(n);
-
-                                putchar(m);
-
-                                if (n != 56 || m != 57)
-
-                                {
-
-                                        putchar(',');
-
-                                        putchar(' ');
-
-                                }
-
-                        }
-
-                }
-
-        }
-
-        putchar('\n');
-
-        return (0);
-
+	return (0);
 }
-
-
-

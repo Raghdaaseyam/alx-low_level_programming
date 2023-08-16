@@ -6,15 +6,11 @@
  */
 
 int main(void)
-
 {
-	int c;
+	int a;
 
-	while
-		(c < 10) {
-			putchar(c + '0');
-			c++;
-		}
+	for (a = 0; a < 10; a++)
+		printf("%d", a);
 	putchar('\n');
 	return (0);
 }
