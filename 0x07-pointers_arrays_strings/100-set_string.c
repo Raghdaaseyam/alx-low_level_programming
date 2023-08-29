@@ -1,25 +1,10 @@
 #include "main.h"
-
 /**
- * _atoi - converts string to integer
- * @s: contains a tring passed to  a function to be converted
- * Return: 0 or a convareted integer from string
+ * set_string - sets the value of a pointer to a char
+ * @s: pointer to pointer
+ * @to: pointer char
  */
-
-int _atoi(char *s)
+void set_string(char **s, char *to)
 {
-	int a = 1;
-	unsigned int b = 0;
-
-	do {
-		if (*s == '-')
-			a *= -1;
-
-		else if (*s >= '0' && *s <= '9')
-			b = (b * 10) + (*s - '0');
-
-		else if (b > 0)
-			break;
-	} while (*s++);
-	return (b * a);
+	*s = to;
 }
